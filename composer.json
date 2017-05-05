@@ -1,0 +1,21 @@
+{
+    "name": "huttopia/symfony-console",
+    "description": "Add some nice features to symfony/console",
+    "license": "MIT",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Huttopia\\SymfonyConsole\\": ""
+        }
+    },
+    "require": {
+        "php": ">=7.1.2",
+        "symfony/console": "^2.3 || ^3.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:Huttopia/symfony-console.git"
+        }
+    ]
+}
