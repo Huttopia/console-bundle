@@ -1,5 +1,5 @@
 {
-    "name": "huttopia/symfony-console",
+    "name": "huttopia/console-bundle",
     "description": "Add some nice features to symfony/console",
     "license": "MIT",
     "type": "library",
