@@ -5,12 +5,12 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Huttopia\\SymfonyConsole\\": ""
+            "Huttopia\\ConsoleBundle\\": ""
         }
     },
     "require": {
         "php": ">=7.1.2",
-        "symfony/console": "^2.3 || ^3.0"
+        "symfony/symfony": "^2.3 || ^3.0"
     },
     "repositories": [
         {
