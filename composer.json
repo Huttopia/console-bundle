@@ -15,7 +15,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:Huttopia/symfony-console.git"
+            "url": "git@github.com:huttopia/console-bundle.git"
         }
     ]
 }
