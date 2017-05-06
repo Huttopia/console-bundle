@@ -21,6 +21,9 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('excluded')
                     ->prototype('scalar')->end()
                 ->end()
+                ->arrayNode('databases')
+                    ->prototype('scalar')->end()
+                ->end()
             ->end();
 
         return $treeBuilder;
