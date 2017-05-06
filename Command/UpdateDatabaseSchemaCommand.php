@@ -4,9 +4,11 @@ namespace Huttopia\ConsoleBundle\Command;
 
 use Doctrine\Bundle\DoctrineBundle\Command\Proxy\UpdateSchemaDoctrineCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\{
+    Input\InputArgument,
+    Input\InputInterface,
+    Output\OutputInterface
+};
 
 class UpdateDatabaseSchemaCommand extends UpdateSchemaDoctrineCommand
 {
