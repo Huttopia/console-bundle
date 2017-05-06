@@ -2,11 +2,13 @@
 
 namespace Huttopia\ConsoleBundle\Command;
 
-use Doctrine\Bundle\DoctrineBundle\Command\Proxy\UpdateSchemaDoctrineCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Console\{
+    Input\InputInterface,
+    Output\OutputInterface
+};
+use Doctrine\Bundle\DoctrineBundle\Command\Proxy\UpdateSchemaDoctrineCommand;
 
 class UpdateAllDatabaseSchemaCommand extends UpdateSchemaDoctrineCommand
 {

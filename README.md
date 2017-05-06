@@ -1,4 +1,4 @@
-[![version](https://img.shields.io/badge/version-BETA-red.svg)](https://github.com/huttopia/console-bundle)
+[![version](https://img.shields.io/badge/version-1.1.0-red.svg)](https://github.com/huttopia/console-bundle)
 [![symfony](https://img.shields.io/badge/symfony/symfony-^2.3%20||%20^3.0-blue.svg)](https://symfony.com)
 ![Lines](https://img.shields.io/badge/code%20lines-353-green.svg)
 ![Total Downloads](https://poser.pugx.org/huttopia/console-bundle/downloads)
