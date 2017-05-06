@@ -14,5 +14,6 @@ class ConsoleExtension extends Extension
         $configuration = $this->processConfiguration(new Configuration(), $configs);
 
         $container->setParameter('console.excluded', $configuration['excluded']);
+        $container->setParameter('console.databases', $configuration['databases']);
     }
 }
