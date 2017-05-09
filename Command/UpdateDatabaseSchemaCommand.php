@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Huttopia\ConsoleBundle\Command;
 
 use Doctrine\Bundle\DoctrineBundle\Command\Proxy\UpdateSchemaDoctrineCommand;

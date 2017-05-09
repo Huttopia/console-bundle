@@ -7,7 +7,7 @@
 
 Allow to exclude some commands.
 
-For example, if you don't want to have _doctrine:schema:update_ command in _prod_ env : now you can :).
+For example, if you don't want to have _doctrine:schema:update_ command in _prod_ env: now you can :).
 
 Add configuration to _doctrine:schema:update_ to get queries for more than one database per connection.
 
@@ -44,7 +44,7 @@ You can exclude commands you don't need, or you don't want to be executed on thi
 use Huttopia\ConsoleBundle\Application;
 ```
 
-Then configure commands you want to be excluded :
+Then configure commands you want to be excluded:
 ```yaml
 
 # app/config/config.yml
@@ -56,11 +56,11 @@ console:
 
 # doctrine:schema:update for more than one database
 
-_doctrine:schema:update_ has a major problem for us : only one database per connection is managed.
+_doctrine:schema:update_ has a major problem for us: only one database per connection is managed.
 
 In our projects, we have more than one database per connection, so _doctrine:schema:update_ don't show queries for all our databases.
  
-_UpdateDatabaseSchemaCommand_ replace _doctrine:schema:update_, and call old _doctrine:schema:update_ for all configured databases !
+_UpdateDatabaseSchemaCommand_ replace _doctrine:schema:update_, and call old _doctrine:schema:update_ for all configured databases!
  
 ```yaml
  
