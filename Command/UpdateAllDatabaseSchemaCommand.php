@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Huttopia\ConsoleBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
