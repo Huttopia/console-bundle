@@ -33,7 +33,7 @@ class AppKernel
 }
 ```
 
-# Exlude commands
+# Exclude commands
 
 You can exclude commands you don't need, or you don't want to be executed on this project / environment.
 
