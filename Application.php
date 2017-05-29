@@ -19,7 +19,7 @@ class Application extends BundleApplication
         return $this;
     }
 
-    public function getExlucdedCommands(): array
+    public function getExcludedCommands(): array
     {
         $return = $this->excludedCommands;
 
@@ -37,7 +37,7 @@ class Application extends BundleApplication
             count(
                 array_intersect(
                     array_merge([$command->getName()], $command->getAliases()),
-                    static::getExlucdedCommands()
+                    static::getExcludedCommands()
                 )
             ) === 0
         ) {
