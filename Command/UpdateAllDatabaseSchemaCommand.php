@@ -82,12 +82,16 @@ class UpdateAllDatabaseSchemaCommand extends UpdateSchemaDoctrineCommand
             [
                 0 => ['pipe', 'r'],
                 1 => ['pipe', 'w'],
-                2 => ['file', $this->getApplication()->getKernel()->getCacheDir() . 'update-schema-cache.' . $name, 'a']
+                2 => ['pipe', 'w']
             ],
             $pipes
         );
 
         $output->writeln(stream_get_contents($pipes[1]));
+        $errors = trim(stream_get_contents($pipes[2]));
+        if (strlen($errors) > 0) {
+            $output->writeln('<error>' . $errors . '</error>' . "\n");
+        }
         fclose($pipes[1]);
         proc_close($process);
 
