@@ -9,8 +9,7 @@
         }
     },
     "require": {
-        "php": ">=7.1.2",
-        "symfony/symfony": "^2.3 || ^3.0"
+        "php": ">=7.1.2"
     },
     "repositories": [
         {
