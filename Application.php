@@ -10,6 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class Application extends BundleApplication
 {
+    /** @var string[] */
     protected $excludedCommands = [];
 
     public function addExcludedCommand(string $name): self
@@ -31,7 +32,7 @@ class Application extends BundleApplication
         return $return;
     }
 
-    public function add(Command $command)
+    public function add(Command $command): ?Command
     {
         if (
             count(

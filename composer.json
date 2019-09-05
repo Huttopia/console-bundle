@@ -10,12 +10,7 @@
     },
     "require": {
         "php": ">=7.1.2",
-        "symfony/framework-bundle": "^2.3|^3.0|^4.0"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:huttopia/console-bundle.git"
-        }
-    ]
+        "symfony/framework-bundle": "^2.3|^3.0|^4.0",
+        "symfony/console": "^2.3|^3.0|^4.0"
+    }
 }
