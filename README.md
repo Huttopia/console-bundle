@@ -19,9 +19,26 @@ Add configuration to _doctrine:schema:update_ to get queries for more than one d
 composer require huttopia/console-bundle ^1.1
 ```
 
+Replace parts of `bin/console`:
+```php
+# Replace use Symfony\Bundle\FrameworkBundle\Console\Application; by this one
+use Huttopia\ConsoleBundle\Application;
+
+# Add this line before $input = new ArgvInput();
+$allCommands = \Huttopia\ConsoleBundle\AllCommandsOption::parseAllCommandsOption($argv);
+$input = new ArgvInput();
+
+# Replace Application creation (it should be the last 2 lines of your bin/console)
+// $application = new Application($kernel);
+// $application->run($input);
+(new Application($kernel))
+    ->setAllCommands($allCommands)
+    ->run($input);
+```
+
+## Symfony <= 3
 ```php
 # app/AppKernel.php
-
 class AppKernel
 {
     public function registerBundles()
@@ -33,21 +50,20 @@ class AppKernel
 }
 ```
 
-# Exclude commands
+## Symfony >= 4
 
-You can exclude commands you don't need, or you don't want to be executed on this project / environment.
-
-```php
-# bin/console
-
-# replace use Symfony\Bundle\FrameworkBundle\Console\Application; by this one
-use Huttopia\ConsoleBundle\Application;
+```yaml
+# config/bundels.php
+return [
+    Huttopia\ConsoleBundle\ConsoleBundle::class => ['all' => true]
+];
 ```
 
-Then configure commands you want to be excluded:
-```yaml
+# Exclude commands
 
-# app/config/config.yml
+```yaml
+# Symfony <= 3: app/config/config.yml
+# Symfony >= 4: config/packages/console_bundle.yaml
 console:
     excluded:
         - 'foo:bar:baz'
@@ -60,11 +76,13 @@ _doctrine:schema:update_ has a major problem for us: only one database per conne
 
 In our projects, we have more than one database per connection, so _doctrine:schema:update_ don't show queries for all our databases.
  
-_UpdateDatabaseSchemaCommand_ replace _doctrine:schema:update_, and call old _doctrine:schema:update_ for all configured databases!
- 
+_UpdateDatabaseSchemaCommand_ replace _doctrine:schema:update_ and call old _doctrine:schema:update_ for all configured databases!
+
+## Configuration
+
 ```yaml
- 
-# app/config/config.yml
+# Symfony <= 3: app/config/config.yml
+# Symfony >= 4: config/packages/console_bundle.yaml
 console:
     databases:
         - database_name_1
