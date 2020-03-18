@@ -24,6 +24,14 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('databases')
                     ->prototype('scalar')->end()
                 ->end()
+                ->arrayNode('list')
+                    ->children()
+                        ->integerNode('symfonyVersionVerbosityLevel')->defaultValue(0)->end()
+                        ->integerNode('usageVerbosityLevel')->defaultValue(0)->end()
+                        ->integerNode('optionsVerbosityLevel')->defaultValue(0)->end()
+                        ->integerNode('availableCommandsVerbosityLevel')->defaultValue(0)->end()
+                    ->end()
+                ->end()
             ->end();
 
         return $treeBuilder;

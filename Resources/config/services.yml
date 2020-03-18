@@ -1,0 +1,9 @@
+services:
+    Huttopia\ConsoleBundle\Command\ListCommand:
+        arguments:
+            - '%console.list.symfonyVersionVerbosityLevel%'
+            - '%console.list.usageVerbosityLevel%'
+            - '%console.list.optionsVerbosityLevel%'
+            - '%console.list.availableCommandsVerbosityLevel%'
+        tags:
+            - {name: console.command}
