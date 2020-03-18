@@ -70,6 +70,30 @@ console:
         - 'bar:foo:baz'
 ```
 
+# Hide parts of command list
+
+When you call `bin/console` or `bin/console list`, you see the list of commands.
+
+Output is cut in 4 parts:
+ * Symfony version, environment and debug mode state
+ * Help for usage syntax
+ * Help for options available with all commands
+ * Commands list
+
+You can configure at what verbosity level each part will be shown.
+
+Verbosity level could be `0`, `1` (`-v`), `2` (`-vv`) or `3` (`-vvv`).
+```yaml
+# Symfony <= 3: app/config/config.yml
+# Symfony >= 4: config/packages/console_bundle.yaml
+console:
+    list:
+        symfonyVersionVerbosityLevel: 1
+        usageVerbosityLevel: 1
+        optionsVerbosityLevel: 1
+        availableCommandsVerbosityLevel: 0
+```
+
 # doctrine:schema:update for more than one database
 
 _doctrine:schema:update_ has a major problem for us: only one database per connection is managed.

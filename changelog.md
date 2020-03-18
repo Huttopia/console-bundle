@@ -2,6 +2,10 @@
 
 - [Steevan](https://github.com/steevanb) Add `--all-commands` to ignore removed commands configuration.
 - [Steevan](https://github.com/steevanb) Symfony 5 dependencies allowed.
+- [Steevan](https://github.com/steevanb) Add `list.symfonyVersionVerbosityLevel` configuration.
+- [Steevan](https://github.com/steevanb) Add `list.usageVerbosityLevel` configuration.
+- [Steevan](https://github.com/steevanb) Add `list.optionsVerbosityLevel` configuration.
+- [Steevan](https://github.com/steevanb) Add `list.availableCommandsVerbosityLevel` configuration.
 
 ### [1.1.1](../../compare/1.1.0...1.1.1) - 2016-05-29
 

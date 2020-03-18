@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Huttopia\ConsoleBundle;
 
-use Symfony\Bundle\FrameworkBundle\Console\Application as BundleApplication;
+use Symfony\Bundle\FrameworkBundle\Console\Application as SymfonyApplication;
 use Symfony\Component\Console\{
     Command\Command,
     Input\InputDefinition,
@@ -12,7 +12,7 @@ use Symfony\Component\Console\{
 };
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class Application extends BundleApplication
+class Application extends SymfonyApplication
 {
     /** @var string[] */
     protected $excludedCommands = [];
