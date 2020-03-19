@@ -1,4 +1,4 @@
-### Next release
+### [1.2.0](../../compare/1.1.3...1.2.0) - 2020-03-19
 
 - [Steevan](https://github.com/steevanb) Add `--all-commands` to ignore removed commands configuration.
 - [Steevan](https://github.com/steevanb) Symfony 5 dependencies allowed.
@@ -7,6 +7,16 @@
 - [Steevan](https://github.com/steevanb) Add `list.optionsVerbosityLevel` configuration.
 - [Steevan](https://github.com/steevanb) Add `list.availableCommandsVerbosityLevel` configuration.
 - [Steevan](https://github.com/steevanb) Move source code files into `src` directory.
+
+### [1.1.3](../../compare/1.1.2...1.1.3) - 2018-09-05
+
+- [ZeMarine](https://github.com/ZeMarine) Documentation fixes
+- [ZeMarine](https://github.com/ZeMarine) Add dependency with `symfony/console`.
+- [ZeMarine](https://github.com/ZeMarine) Add return typehint for `Application::add(): ?Command`.
+
+### [1.1.2](../../compare/1.1.1...1.1.2) - 2018-08-24
+
+- [ZeMarine](https://github.com/ZeMarine) Add compatibility with `symfony/framework-bundle ^4.0`.
 
 ### [1.1.1](../../compare/1.1.0...1.1.1) - 2016-05-29
 
