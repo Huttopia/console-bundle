@@ -1,6 +1,7 @@
-[![version](https://img.shields.io/badge/version-1.1.1-green.svg)](https://github.com/huttopia/console-bundle)
-[![symfony](https://img.shields.io/badge/symfony/symfony-^2.3%20||%20^3.0%20||%20^4.0-blue.svg)](https://symfony.com)
-![Lines](https://img.shields.io/badge/code%20lines-366-green.svg)
+[![version](https://img.shields.io/badge/version-1.2.0-green.svg)](https://github.com/huttopia/console-bundle)
+[![symfony](https://img.shields.io/badge/symfony/frameworkbundle-^2.3%20||%20^3.0%20||%20^4.0||%20^5.0-blue.svg)](https://symfony.com)
+[![symfony](https://img.shields.io/badge/symfony/console-^2.3%20||%20^3.0%20||%20^4.0%20||%20^5.0-blue.svg)](https://symfony.com)
+![Lines](https://img.shields.io/badge/code%20lines-841-green.svg)
 ![Total Downloads](https://poser.pugx.org/huttopia/console-bundle/downloads)
 
 # ConsoleBundle
@@ -16,7 +17,7 @@ Add configuration to _doctrine:schema:update_ to get queries for more than one d
 # Installation
 
 ```bash
-composer require huttopia/console-bundle ^1.1
+composer require huttopia/console-bundle ^1.2
 ```
 
 Replace parts of `bin/console`:
@@ -36,7 +37,7 @@ $input = new ArgvInput();
     ->run($input);
 ```
 
-## Symfony <= 3
+## Symfony <= 3
 ```php
 # app/AppKernel.php
 class AppKernel
@@ -53,7 +54,7 @@ class AppKernel
 ## Symfony >= 4
 
 ```yaml
-# config/bundels.php
+# config/bundles.php
 return [
     Huttopia\ConsoleBundle\ConsoleBundle::class => ['all' => true]
 ];
@@ -70,7 +71,7 @@ console:
         - 'bar:foo:baz'
 ```
 
-# Hide parts of command list
+# Hide parts of command list
 
 When you call `bin/console` or `bin/console list`, you see the list of commands.
 
