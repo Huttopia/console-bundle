@@ -25,7 +25,7 @@ Replace parts of `bin/console`:
 use Huttopia\ConsoleBundle\Application;
 
 # Add this line before $input = new ArgvInput();
-$allCommands = \Huttopia\ConsoleBundle\AllCommandsOption::parseAllCommandsOption($argv);
+$allCommands = \Huttopia\ConsoleBundle\CommandOption\AllCommandsOption::parseAllCommandsOption($argv);
 $input = new ArgvInput();
 
 # Replace Application creation (it should be the last 2 lines of your bin/console)

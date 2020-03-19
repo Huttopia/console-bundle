@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Huttopia\ConsoleBundle;
+namespace Huttopia\ConsoleBundle\CommandOption;
 
 class AllCommandsOption
 {
