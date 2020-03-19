@@ -6,6 +6,7 @@
 - [Steevan](https://github.com/steevanb) Add `list.usageVerbosityLevel` configuration.
 - [Steevan](https://github.com/steevanb) Add `list.optionsVerbosityLevel` configuration.
 - [Steevan](https://github.com/steevanb) Add `list.availableCommandsVerbosityLevel` configuration.
+- [Steevan](https://github.com/steevanb) Move source code files into `src` directory.
 
 ### [1.1.1](../../compare/1.1.0...1.1.1) - 2016-05-29
 

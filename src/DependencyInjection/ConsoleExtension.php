@@ -50,7 +50,7 @@ class ConsoleExtension extends Extension
     ): self {
         $container->setParameter(
             "console.list.$name",
-            $this->convertVerbosityLevel($configuration['list'][$name])
+            $this->convertVerbosityLevel($configuration['list'][$name] ?? 0)
         );
 
         return $this;

@@ -5,7 +5,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Huttopia\\ConsoleBundle\\": ""
+            "Huttopia\\ConsoleBundle\\": "src/"
         }
     },
     "require": {
