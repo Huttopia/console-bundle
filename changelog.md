@@ -1,3 +1,7 @@
+### Next release
+
+- [Steevan](https://github.com/steevanb) Change `Application::$allCommands` default value from true to false.
+
 ### [1.2.0](../../compare/1.1.3...1.2.0) - 2020-03-19
 
 - [Steevan](https://github.com/steevanb) Add `--all-commands` to ignore removed commands configuration.
