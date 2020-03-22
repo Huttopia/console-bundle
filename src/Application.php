@@ -18,7 +18,7 @@ class Application extends SymfonyApplication
     protected $excludedCommands = [];
 
     /** @var bool */
-    protected $allCommands = true;
+    protected $allCommands = false;
 
     public function setAllCommands(bool $allCommands): self
     {
