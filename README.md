@@ -1,7 +1,7 @@
 [![version](https://img.shields.io/badge/version-1.2.0-green.svg)](https://github.com/huttopia/console-bundle)
 [![symfony](https://img.shields.io/badge/symfony/frameworkbundle-^2.3%20||%20^3.0%20||%20^4.0||%20^5.0-blue.svg)](https://symfony.com)
 [![symfony](https://img.shields.io/badge/symfony/console-^2.3%20||%20^3.0%20||%20^4.0%20||%20^5.0-blue.svg)](https://symfony.com)
-![Lines](https://img.shields.io/badge/code%20lines-841-green.svg)
+![Lines](https://img.shields.io/badge/code%20lines-951-green.svg)
 ![Total Downloads](https://poser.pugx.org/huttopia/console-bundle/downloads)
 
 # ConsoleBundle
@@ -94,6 +94,29 @@ console:
         optionsVerbosityLevel: 1
         availableCommandsVerbosityLevel: 0
 ```
+
+# Colorise some commands
+
+When you call `bin/console` or `bin/console list`, you see the list of commands.
+
+You can change the color of each part of the command name and description:
+
+```
+console:
+    list:
+        output:
+            # See https://symfony.com/doc/current/console/coloring.html
+            styles:
+                foo:
+                    foreground: cyan # 1st parameter of new OutputFormatterStyle()
+                    background: green # 2nd parameter of new OutputFormatterStyle()
+                    options: [bold, underscore] # 3rd parameter of new OutputFormatterStyle()
+            commands:
+                generate:benchmark: "<foo>%%s</>%%s%%s" # 1st %s is command name, 2nd is spaces between name and description and 3rd is the description
+            highlights: # Shortcut for "<highlight>%%s</>%%s%%s" who will write command name in blue instead of green
+                - 'generate:benchmark'
+                - 'generate:default-installation'
+``` 
 
 # doctrine:schema:update for more than one database
 

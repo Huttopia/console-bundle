@@ -6,6 +6,7 @@ namespace Huttopia\ConsoleBundle\Command;
 
 use Symfony\Component\Console\{
     Command\ListCommand as SymfonyListCommand,
+    Formatter\OutputFormatterStyle,
     Helper\DescriptorHelper,
     Input\InputInterface,
     Output\OutputInterface
@@ -26,11 +27,20 @@ class ListCommand extends SymfonyListCommand
     /** @var int */
     protected $availableCommandsVerbosityLevel = 0;
 
+    /** @var array */
+    protected $outputStyles;
+
+    /** @var array|string[] */
+    protected $outputCommands = [];
+
     public function __construct(
         int $symfonyVersionVerbosityLevel,
         int $usageVerbosityLevel,
         int $optionsVerbosityLevel,
-        int $availableCommandsVerbosityLevel
+        int $availableCommandsVerbosityLevel,
+        array $outputStyles,
+        array $outputCommands,
+        array $highlights
     ) {
         parent::__construct();
 
@@ -38,9 +48,44 @@ class ListCommand extends SymfonyListCommand
         $this->usageVerbosityLevel = $usageVerbosityLevel;
         $this->optionsVerbosityLevel = $optionsVerbosityLevel;
         $this->availableCommandsVerbosityLevel = $availableCommandsVerbosityLevel;
+        $this->outputStyles = $outputStyles;
+        foreach ($highlights as $highlight) {
+            $this->outputCommands[$highlight] = '<highlight>%s</highlight>%s%s';
+        }
+        $this->outputCommands = array_merge($this->outputCommands, $outputCommands);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $this
+            ->addOutputStyles($output, $this->outputStyles)
+            ->describe($input, $output);
+
+        return 0;
+    }
+
+    protected function addOutputStyles(OutputInterface $output, array $outputStyles): self
+    {
+        $output->getFormatter()->setStyle(
+            'highlight',
+            new OutputFormatterStyle('blue', 'green')
+        );
+
+        foreach ($outputStyles as $outputStyleName => $outputStyle) {
+            $output->getFormatter()->setStyle(
+                $outputStyleName,
+                new OutputFormatterStyle(
+                    $outputStyle['foreground'],
+                    $outputStyle['background'],
+                    $outputStyle['options']
+                )
+            );
+        }
+
+        return $this;
+    }
+
+    protected function describe(InputInterface $input, OutputInterface $output): self
     {
         (new DescriptorHelper())
             ->register(
@@ -53,12 +98,17 @@ class ListCommand extends SymfonyListCommand
                     $this->availableCommandsVerbosityLevel
                 )
             )
-            ->describe($output, $this->getApplication(), [
-                'format' => $input->getOption('format'),
-                'raw_text' => $input->getOption('raw'),
-                'namespace' => $input->getArgument('namespace'),
-            ]);
+            ->describe(
+                $output,
+                $this->getApplication(),
+                [
+                    'format' => $input->getOption('format'),
+                    'raw_text' => $input->getOption('raw'),
+                    'namespace' => $input->getArgument('namespace'),
+                    'outputCommands' => $this->outputCommands
+                ]
+            );
 
-        return 0;
+        return $this;
     }
 }
