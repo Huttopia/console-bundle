@@ -5,5 +5,8 @@ services:
             - '%console.list.usageVerbosityLevel%'
             - '%console.list.optionsVerbosityLevel%'
             - '%console.list.availableCommandsVerbosityLevel%'
+            - '%console.list.output.styles%'
+            - '%console.list.output.commands%'
+            - '%console.list.output.highlights%'
         tags:
             - {name: console.command}

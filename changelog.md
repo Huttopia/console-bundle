@@ -1,6 +1,7 @@
-### Next release
+### [Next release]
 
 - [Steevan](https://github.com/steevanb) Change `Application::$allCommands` default value from true to false.
+- [Steevan](https://github.com/steevanb) Add `console.list.output.styles`, `console.list.output.commands` and `console.list.output.highlights` configurations.
 
 ### [1.2.0](../../compare/1.1.3...1.2.0) - 2020-03-19
 

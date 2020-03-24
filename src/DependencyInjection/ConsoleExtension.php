@@ -28,6 +28,8 @@ class ConsoleExtension extends Extension
         $container->setParameter('console.excluded', $configuration['excluded']);
         $container->setParameter('console.databases', $configuration['databases']);
 
+        $this->defineOutputParameters($configuration['list']['output'] ?? [], $container);
+
         return $this
             ->defineVerbosityLevelParameter('symfonyVersionVerbosityLevel', $container, $configuration)
             ->defineVerbosityLevelParameter('usageVerbosityLevel', $container, $configuration)
@@ -66,5 +68,14 @@ class ConsoleExtension extends Extension
         }
 
         return $return;
+    }
+
+    protected function defineOutputParameters(array $configuration, ContainerBuilder $container): self
+    {
+        $container->setParameter('console.list.output.styles', $configuration['styles'] ?? []);
+        $container->setParameter('console.list.output.commands', $configuration['commands'] ?? []);
+        $container->setParameter('console.list.output.highlights', $configuration['highlights'] ?? []);
+
+        return $this;
     }
 }
