@@ -1,7 +1,7 @@
-[![version](https://img.shields.io/badge/version-1.2.0-green.svg)](https://github.com/huttopia/console-bundle)
+[![version](https://img.shields.io/badge/version-1.3.0-green.svg)](https://github.com/huttopia/console-bundle)
 [![symfony](https://img.shields.io/badge/symfony/frameworkbundle-^2.3%20||%20^3.0%20||%20^4.0||%20^5.0-blue.svg)](https://symfony.com)
 [![symfony](https://img.shields.io/badge/symfony/console-^2.3%20||%20^3.0%20||%20^4.0%20||%20^5.0-blue.svg)](https://symfony.com)
-![Lines](https://img.shields.io/badge/code%20lines-951-green.svg)
+![Lines](https://img.shields.io/badge/code%20lines-954-green.svg)
 ![Total Downloads](https://poser.pugx.org/huttopia/console-bundle/downloads)
 
 # ConsoleBundle
@@ -17,7 +17,7 @@ Add configuration to _doctrine:schema:update_ to get queries for more than one d
 # Installation
 
 ```bash
-composer require huttopia/console-bundle ^1.2
+composer require huttopia/console-bundle ^1.3
 ```
 
 Replace parts of `bin/console`:
