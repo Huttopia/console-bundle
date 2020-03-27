@@ -50,7 +50,7 @@ class ListCommand extends SymfonyListCommand
         $this->availableCommandsVerbosityLevel = $availableCommandsVerbosityLevel;
         $this->outputStyles = $outputStyles;
         foreach ($highlights as $highlight) {
-            $this->outputCommands[$highlight] = '<highlight>%s</highlight>%s%s';
+            $this->outputCommands[$highlight] = '<highlight>%s</highlight>%s<highlight>%s</highlight>';
         }
         $this->outputCommands = array_merge($this->outputCommands, $outputCommands);
     }
@@ -68,7 +68,7 @@ class ListCommand extends SymfonyListCommand
     {
         $output->getFormatter()->setStyle(
             'highlight',
-            new OutputFormatterStyle('blue', 'green')
+            new OutputFormatterStyle('cyan')
         );
 
         foreach ($outputStyles as $outputStyleName => $outputStyle) {
