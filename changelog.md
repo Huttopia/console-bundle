@@ -1,3 +1,8 @@
+### [1.3.1](../../compare/1.3.0...1.3.1) - 2020-03-27
+
+- Fix `highlight` output style.
+- Fix command name with `-` who was not colored.
+
 ### [1.3.0](../../compare/1.2.0...1.3.0) - 2020-03-26
 
 - [Steevan](https://github.com/steevanb) Change `Application::$allCommands` default value from true to false.

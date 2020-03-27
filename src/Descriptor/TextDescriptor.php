@@ -9,7 +9,6 @@ use Symfony\Component\Console\{
     Command\Command,
     Descriptor\ApplicationDescription,
     Descriptor\TextDescriptor as SymfonyTextDescriptor,
-    Formatter\OutputFormatterStyle,
     Helper\Helper,
     Input\InputDefinition
 };
@@ -171,7 +170,8 @@ class TextDescriptor extends SymfonyTextDescriptor
 
                 $this->writeText(
                     sprintf(
-                        '  ' . ($options['outputCommands'][$name] ?? '<info>%s</info>%s%s'),
+                        # symfony/yaml replace - by _ in keys
+                        '  ' . ($options['outputCommands'][str_replace('-', '_', $name)] ?? '<info>%s</info>%s%s'),
                         $name,
                         str_repeat(' ', $spacingWidth),
                         $commandAliases . $command->getDescription()
