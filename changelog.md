@@ -1,3 +1,7 @@
+### [1.3.2](../../compare/1.3.1...1.3.2) - 2020-03-31
+
+- Fix `console.list.output.highlights` command with `-` in their name.
+
 ### [1.3.1](../../compare/1.3.0...1.3.1) - 2020-03-27
 
 - Fix `highlight` output style.

@@ -50,7 +50,9 @@ class ListCommand extends SymfonyListCommand
         $this->availableCommandsVerbosityLevel = $availableCommandsVerbosityLevel;
         $this->outputStyles = $outputStyles;
         foreach ($highlights as $highlight) {
-            $this->outputCommands[$highlight] = '<highlight>%s</highlight>%s<highlight>%s</highlight>';
+            # Replace - by _ to have same behavior as symfony/yaml with keys for console.list.output.commands config
+            $this->outputCommands[str_replace('-', '_', $highlight)]
+                = '<highlight>%s</highlight>%s<highlight>%s</highlight>';
         }
         $this->outputCommands = array_merge($this->outputCommands, $outputCommands);
     }
