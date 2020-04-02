@@ -1,7 +1,7 @@
-[![version](https://img.shields.io/badge/version-1.3.2-green.svg)](https://github.com/huttopia/console-bundle)
-[![symfony](https://img.shields.io/badge/symfony/frameworkbundle-^2.3%20||%20^3.0%20||%20^4.0||%20^5.0-blue.svg)](https://symfony.com)
+[![version](https://img.shields.io/badge/version-1.3.3-green.svg)](https://github.com/huttopia/console-bundle)
+[![symfony](https://img.shields.io/badge/symfony/frameworkbundle-^2.3%20||%20^3.0%20||%20^4.0%20||%20^5.0-blue.svg)](https://symfony.com)
 [![symfony](https://img.shields.io/badge/symfony/console-^2.3%20||%20^3.0%20||%20^4.0%20||%20^5.0-blue.svg)](https://symfony.com)
-![Lines](https://img.shields.io/badge/code%20lines-964-green.svg)
+![Lines](https://img.shields.io/badge/code%20lines-973-green.svg)
 ![Total Downloads](https://poser.pugx.org/huttopia/console-bundle/downloads)
 
 # ConsoleBundle
