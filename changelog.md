@@ -1,11 +1,15 @@
+### [1.3.3](../../compare/1.3.2...1.3.3) - 2020-04-03
+
+- [Steevan](https://github.com/steevanb) Fix for Symfony 5.
+
 ### [1.3.2](../../compare/1.3.1...1.3.2) - 2020-03-31
 
-- Fix `console.list.output.highlights` command with `-` in their name.
+- [Steevan](https://github.com/steevanb) Fix `console.list.output.highlights` command with `-` in their name.
 
 ### [1.3.1](../../compare/1.3.0...1.3.1) - 2020-03-27
 
-- Fix `highlight` output style.
-- Fix command name with `-` who was not colored.
+- [Steevan](https://github.com/steevanb) Fix `highlight` output style.
+- [Steevan](https://github.com/steevanb) Fix command name with `-` who was not colored.
 
 ### [1.3.0](../../compare/1.2.0...1.3.0) - 2020-03-26
 
