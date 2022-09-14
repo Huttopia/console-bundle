@@ -164,13 +164,13 @@ class TextDescriptor extends SymfonyTextDescriptor
 
             foreach ($namespace['commands'] as $name) {
                 $this->writeLn();
-                $spacingWidth = $width - Helper::strlen($name);
+                $spacingWidth = $width - Helper::length($name);
                 $command = $commands[$name];
                 $commandAliases = $name === $command->getName() ? $this->getCommandAliasesText($command) : '';
 
                 $this->writeText(
                     sprintf(
-                        # symfony/yaml replace - by _ in keys
+                    # symfony/yaml replace - by _ in keys
                         '  ' . ($options['outputCommands'][str_replace('-', '_', $name)] ?? '<info>%s</info>%s%s'),
                         $name,
                         str_repeat(' ', $spacingWidth),
@@ -207,10 +207,10 @@ class TextDescriptor extends SymfonyTextDescriptor
             if ($command instanceof Command) {
                 $widths[] = Helper::strlen($command->getName());
                 foreach ($command->getAliases() as $alias) {
-                    $widths[] = Helper::strlen($alias);
+                    $widths[] = Helper::length($alias);
                 }
             } else {
-                $widths[] = Helper::strlen($command);
+                $widths[] = Helper::length($command);
             }
         }
 
